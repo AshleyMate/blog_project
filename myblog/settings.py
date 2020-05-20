@@ -121,7 +121,9 @@ USE_TZ = False  # 한국 시간대만 사용하는 프로젝트인 경우 USE_TZ
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
 
 MEDIA_URL = '/media/'
 

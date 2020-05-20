@@ -7,7 +7,7 @@ app_name = 'bookmark'
 urlpatterns = [
     path('', BookmarkLV.as_view(), name='index'),
     # URL 패턴 이름은 app_name을 포함한 'bookmark:index'가 된다.
-    path('<int:pk>', BookmarkDV.as_view(), name='detail'),
+    path('<int:pk>/', BookmarkDV.as_view(), name='detail'),
     # URL 패턴 이름은 app_name을 포함한 'bookmark:detail'이 된다.
 
 ]
