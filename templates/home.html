@@ -1,13 +1,13 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 
 {% load static %}
 
-{% block title %}home.html{% endblock %} 
+{% block title %}home.html{% endblock %}
 
-{% block extar-style %}
+{% block extra-style %}
 <style type="text/css">
 .home-image {
-    background-image: url("{% static 'images/unnamed.jpg' %}");
+    background-image: url("{% static 'img/costa.jpg' %}");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100%;
@@ -22,17 +22,17 @@
 }
 .powered {
     position: relative;
-    top: 77%
+    top: 77%;
     color: #cc0;
     font-style: italic;
 }
 </style>
-{% endblock%}
+{% endblock %}
 
 {% block content %}
     <div class="home-image">
-        <h2 class="title">Django - Python Web Programming</h2>
-        <h4 class="powered"><i class="fas fa-arrow-circle-right"></i>powered by Django and Bootstrap</h4>
+        <h2 class="title"></h2>
+        <h4 class="powered"></h4>
     </div>
 
     <hr style="margin: 10px 0;">
@@ -40,22 +40,20 @@
     <div class="row text-center">
         <div class="col-sm-6">
             <h3>Bookmark App</h3>
-            <p>Bookmark is a Uniform Resource Identifier (URI) that is stored for later 
-            retrieval in any of various storage formats.    
+            <p>Bookmark is a Uniform Resource Identifier (URI)
+                that is stored for later retrieval in any of various storage formats.
             </p>
-        </div> 
+        </div>
         <div class="col-sm-6">
             <h3>Blog App</h3>
-            <p>The space where I record my Django studies.    
-            </p>
-        </div>         
+            <p>The space where I record my Django studies.</p>
+        </div>
     </div>
-{% endblock %} 
+{% endblock content %}
 
-{% block footer%}
+{% block footer %}
 <footer class="fixed-bottom bg-info">
-    <div class="text-white font-italic text-right mr-5">
-        &copy; LeeChanYoung 2020
-    </div>
+    <div class="text-white font-italic text-right mr-5">powered by django and bootstrap.</div>
 </footer>
-{% endblock%}
+{% endblock %}
+
