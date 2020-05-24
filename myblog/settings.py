@@ -29,7 +29,7 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
+# 장고 실행 시 작동하는 앱들의 목록
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -37,10 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'bookmark.apps.BookmarkConfig',
     'blog.apps.BlogConfig',
     'photo.apps.PhotoConfig',
 
+    'widget_tweaks',
     'taggit.apps.TaggitAppConfig',
     'taggit_templatetags2',
 ]
@@ -124,14 +126,14 @@ USE_TZ = False  # 한국 시간대만 사용하는 프로젝트인 경우 USE_TZ
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 
 MEDIA_URL = '/media/'
-
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+LOGIN_REDIRECT_URL = '/'
 
 TAGGIT_CASE_INSENTIVE = True
 TAGGIT_LIMIT = 50
