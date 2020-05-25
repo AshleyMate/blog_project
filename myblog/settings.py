@@ -38,13 +38,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'taggit.apps.TaggitAppConfig',
+    'taggit_templatetags2',
+    'widget_tweaks',
+
     'bookmark.apps.BookmarkConfig',
     'blog.apps.BlogConfig',
     'photo.apps.PhotoConfig',
-
-    'widget_tweaks',
-    'taggit.apps.TaggitAppConfig',
-    'taggit_templatetags2',
 ]
 
 MIDDLEWARE = [
