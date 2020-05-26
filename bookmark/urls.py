@@ -11,7 +11,7 @@ urlpatterns = [
     # URL 패턴 이름은 app_name을 포함한 'bookmark:detail'이 된다.
     path('add/', views.BookmarkCreateView.as_view(), name='add'),
     path('change/', views.BookmarkChangeLV.as_view(), name='change'),
-    path('<int:pk>/update/', views.BookmarkUpdateView.as_view(), name='upadte'),
+    path('<int:pk>/update/', views.BookmarkUpdateView.as_view(), name='update'),
     path('<int:pk>/delete/', views.BookmarkDeleteView.as_view(), name='delete'),
 
 ]

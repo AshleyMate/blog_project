@@ -7,6 +7,14 @@ from django.urls import reverse_lazy
 from myblog.views import OwnerOnlyMixin
 
 
+class BookmarkLV(ListView):
+    model = Bookmark
+
+
+class BookmarkDV(DetailView):
+    model = Bookmark
+
+
 class BookmarkCreateView(LoginRequiredMixin, CreateView):
     model = Bookmark
     fields = ['title', 'url']
