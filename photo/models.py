@@ -23,7 +23,7 @@ class Photo(models.Model):
     album = models.ForeignKey(Album, on_delete=models.CASCADE)
     title = models.CharField('TITLE', max_length=30)
     description = models.TextField('Photo Description', blank=True)
-    image = models.ImageField("IMAGE", upload_to='SorlPhoto/%Y')
+    image = models.ImageField('IMAGE', upload_to='SorlPhoto/%Y')
     upload_dt = models.DateTimeField('UPLOAD DATE', auto_now_add=True)
     owner = models.ForeignKey(
         'auth.User', on_delete=models.CASCADE, verbose_name='OWNER', blank=True, null=True)

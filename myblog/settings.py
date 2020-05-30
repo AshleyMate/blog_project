@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'taggit_templatetags2',
     'widget_tweaks',
     'sorl.thumbnail',
+    'storages',
 
     'bookmark.apps.BookmarkConfig',
     'blog.apps.BlogConfig',
@@ -148,3 +149,13 @@ TAGGIT_LIMIT = 50
 
 DISQUS_SHORTNAME = 'costa-is-sexy'
 DISQUS_MY_DOMAIN = 'http://192.168.56.101:8000'
+
+STATICFILES_STORAGE = 'myblog.storage.S3StaticStorage'
+DEFAULT_FILE_STORAGE = 'myblog.storage.S3MediaStorage'
+
+AWS_ACCESS_KEY_ID = 'AKIAU6LQAPZKFDMO5L6Z'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_S3_REGION_NAME = 'ap-northeast-2'
+AWS_STORAGE_BUCKET_NAME = 'chanyoung1'
+AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.{AWS_S3_REGION_NAME}.amazonaws.com"
+AWS_DEFAULT_ACL = "public-read"
