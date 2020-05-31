@@ -20,12 +20,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'kky6qtf@8eok6o)me$fwvpnin_i7%5zaqw3)j&iyw=n7i(#x*y'
+SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.elasticbeanstalk.com', '192.168.56.101', '127.0.0.1']
 
 
 # Application definition
@@ -86,9 +86,9 @@ WSGI_APPLICATION = 'myblog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'test',
-        'USER': 'admin',
-        'PASSWORD': 'shkimadmin',
+        'NAME': os.environ['DATABASE_NAME'],
+        'USER': os.environ['DATABASE_USER'],
+        'PASSWORD': os.environ['DATABASE_PASSWORD'],
         'HOST': 'django-mysql-8016.cpvi54yqf04h.us-east-1.rds.amazonaws.com',
         'PORT': '3306',
         'OPTIONS': {
@@ -148,13 +148,13 @@ TAGGIT_CASE_INSENTIVE = True
 TAGGIT_LIMIT = 50
 
 DISQUS_SHORTNAME = 'costa-is-sexy'
-DISQUS_MY_DOMAIN = 'http://192.168.56.101:8000'
+DISQUS_MY_DOMAIN = 'http://djangoblog-env.eba-rcmhvn2g.us-east-1.elasticbeanstalk.com/'
 
 STATICFILES_STORAGE = 'myblog.storage.S3StaticStorage'
 DEFAULT_FILE_STORAGE = 'myblog.storage.S3MediaStorage'
 
-AWS_ACCESS_KEY_ID = 'AKIAU6LQAPZKFDMO5L6Z'
-AWS_SECRET_ACCESS_KEY = '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'
+AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
+AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
 AWS_S3_REGION_NAME = 'ap-northeast-2'
 AWS_STORAGE_BUCKET_NAME = 'chanyoung1'
 AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.{AWS_S3_REGION_NAME}.amazonaws.com"
