@@ -159,3 +159,5 @@ AWS_S3_REGION_NAME = 'ap-northeast-2'
 AWS_STORAGE_BUCKET_NAME = 'chanyoung1'
 AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.{AWS_S3_REGION_NAME}.amazonaws.com"
 AWS_DEFAULT_ACL = "public-read"
+# https://wayhome25.github.io/django/2017/07/11/django-settings-secret-key/
+# 다 배포하지 말자 ^ ^
